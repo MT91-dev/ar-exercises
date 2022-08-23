@@ -9,4 +9,13 @@ require_relative './exercise_6'
 puts "Exercise 7"
 puts "----------"
 
-# Your code goes here ...
+# Ask the user to enter a store name and get input using chomp
+print "Please enter a store name: "
+store_name = gets.chomp
+
+# Create new store with the name entered by the user
+new_store = Store.create(name: store_name)
+
+# Check if the store is valid and log whether it is valid or errors
+puts new_store.valid?
+puts new_store.errors.full_messages
